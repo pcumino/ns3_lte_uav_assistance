@@ -1,0 +1,21 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    if not bld.env['ENABLE_EXAMPLES']:
+        return;
+
+    obj = bld.create_ns3_program('example-udp-group-echo',
+                                 ['psc'])
+    obj.source = 'example-udp-group-echo.cc'
+
+    obj = bld.create_ns3_program('uav-mobility-energy-example', 
+                                 ['core', 'energy', 'mobility', 'psc'])
+    obj.source = 'uav-mobility-energy-example.cc'
+
+   # obj = bld.create_ns3_program('mcptt-lte-sl-out-of-covrg-comm',
+    #                             ['core', 'lte', 'network','mobility', 'internet', 'applications', 'psc'])
+   # obj.source = 'mcptt-lte-sl-out-of-covrg-comm.cc'
+
+    obj = bld.create_ns3_program('example-intel-http',
+                                 ['psc'])
+    obj.source = 'example-intel-http.cc'
