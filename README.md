@@ -1,4 +1,3 @@
-
 The Network Simulator, Version 3
 ================================
 
@@ -124,3 +123,11 @@ However, we recommend to follow the Gitlab guidelines for starters,
 that includes creating a Gitlab account, forking the ns-3-dev project
 under the new account's name, and then cloning the forked repository.
 You can find more information in the [manual](https://www.nsnam.org/docs/manual/html/working-with-git.html).
+
+
+## UAV assistance simulation
+- Run one simulation round with 1 UE, 1 UAV, and 1 BS:
+```shell
+./waf --run scratch/uav_lte --command-template="%s --simTime=5 --n_ue=1 --n_enb=1 --n_uav=1 --auto_deployment=True --enable_uavs=True  " 2>&1 | tee outputlog.txt
+
+```
